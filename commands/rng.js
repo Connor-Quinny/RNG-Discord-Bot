@@ -19,7 +19,7 @@ module.exports = {
         .then(() => {
             interaction.channel.awaitMessages({ filter, max: 1, time: 30000, errors: ['time'] })
 			.then(collected => {
-                interaction.followUp(`${collected.first().author} got the correct answer!`);
+                interaction.followUp(`${collected.first().author} got the correct answer! The number was: **${answer}**`);
 			})
 			.catch(collected => {
                 interaction.followUp('Looks like nobody got the answer this time.');
